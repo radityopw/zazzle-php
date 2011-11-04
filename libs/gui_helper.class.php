@@ -57,11 +57,11 @@ class GuiHelper{
 
 	}
 
-	function submit_button($value = "submit"){
+	function submit_button($value = "submit", $name = ""){
 
 		$return = "";
 
-		$return.="<input type='submit' value='$value' />";
+		$return.="<input type='submit' name='$name' value='$value' />";
 
 		return $return;
 	}
@@ -75,6 +75,22 @@ class GuiHelper{
 		}else{
 			$return.="<input type='checkbox' id='$id' name='$id' value='$value'/>";
 		}
+		return $return;
+
+	}
+
+	function textarea($name = "",$value = ""){
+		
+		$return = "";
+
+
+		$return.= "<textarea name='$name' id='$name'>";
+
+		$return.="$value";
+	
+		$return.="</textarea>";
+
+
 		return $return;
 
 	}

@@ -3,7 +3,7 @@
 class TableGateway{
 
 
-	function __construct($table){
+	function __construct($table,$conf = false){
 		global $opts;
 
 
@@ -13,6 +13,19 @@ class TableGateway{
 		$this->username = $opts['un'];
 		$this->password = $opts['pw'];
 		$this->database = $opts['db'];
+
+		if($conf){
+
+			$this->server = $conf['server'];
+
+			$this->username = $conf['username'];
+
+			$this->password = $conf['password'];
+
+			$this->database = $conf['databases'];
+
+
+		}
 	
 		
 

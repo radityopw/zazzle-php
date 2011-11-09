@@ -22,7 +22,7 @@ class TableGateway{
 
 			$this->password = $conf['password'];
 
-			$this->database = $conf['databases'];
+			$this->database = $conf['database'];
 
 
 		}
@@ -145,7 +145,9 @@ class TableGateway{
 	function build_sql_update($table, $data, $where){
 		$cols = array();
 		foreach($data as $key=>$val) {
+			
 			$cols[] = "`$key` = '$val'";
+			
 		}
 		$sql = "UPDATE $table SET " . implode(', ', $cols) . " WHERE $where";
  

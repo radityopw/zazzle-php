@@ -84,7 +84,7 @@ class GuiHelper{
 		$return = "";
 
 
-		$return.= "<textarea name='$name' id='$name'>";
+		$return.= "<textarea name='$name' id='$name' rows='10' cols='50'>";
 
 		$return.="$value";
 	
@@ -183,6 +183,15 @@ class GuiHelper{
 		$return.=GuiHelper::submit_button();
 		
 		$return.="</form>";
+
+		return $return;
+
+	}
+
+
+	function link($name,$dest){
+
+		$return = "<a href='".$dest."'>".$name."</a>";
 
 		return $return;
 
